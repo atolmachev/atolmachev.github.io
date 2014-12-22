@@ -7,22 +7,45 @@
     <link href='css/bootstrap-theme.css' rel='stylesheet' type='text/css'>
     <link href='css/main.css' rel='stylesheet' type='text/css'>
     <link href='css/pnotify.custom.min.css' rel="stylesheet" type="text/css"/>
-    <script src='js/jquery-2.1.1.js' type="application/javascript"></script>
+    <link href="images/glyphicons-112-align-center.png" rel="shortcut icon">
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <script src='http://code.jquery.com/jquery-2.1.3.js' type="application/javascript"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src='js/pnotify.custom.min.js' type="application/javascript"></script>
+    <script type="text/javascript" src="http://yastatic.net/share/share.js" charset="utf-8"></script>
     <script src='js/data.js' type="application/javascript"></script>
     <script src='js/custom.js' type="application/javascript"></script>
 <body>
-<div class="container">
-    <div style="text-align: center">
-        <div class="header row">
-            <div class="col-md-12">
-                <h1>Кто автор стихов?</h1>
+<div class="header-section">
+    <div class="container">
+        <div class="row header">
+            <div class="col-md-6 text-left">
+                <h1>Стихомания</h1>
+            </div>
+            <div class="col-md-6">
+                <div class="score-wrapper">
+                    <div id="score"></div>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="video-section">
+    <div class="container">
+            <div class="row video-row">
+                <div class="col-md-12">
+                    <div id="video" class="embed-responsive embed-responsive-16by9">
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<div class="quiz-section">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div id="video" class="embed-responsive embed-responsive-16by9">
-                </div>
+                <h2>Кто автор стихов?</h2>
             </div>
         </div>
         <div class="row">
@@ -31,5 +54,15 @@
         </div>
     </div>
 </div>
+
+<footer>
+    <div class="container">
+        <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="none" data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir"></div>
+        <ul class="footer-row">
+            <li></li>
+            <li class="copyright">&copy;&nbsp;Стихомания 2014</li>
+        </ul>
+    </div>
+</footer>
 </body>
 </html>
