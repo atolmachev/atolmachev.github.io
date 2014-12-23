@@ -7,9 +7,26 @@
     box-sizing: border-box;
 }
 
-@media (min-width: 1200px) {
+html, body {
+    height: 100%;
+}
+
+.embed-responsive {
+    padding-bottom: 75%;
+}
+
+@media (min-width: 992px) {
     .container {
         width: 970px;
+    }
+    .embed-responsive {
+        padding-bottom: 56.25%;
+    }
+    h1 {
+        text-align: left;
+    }
+    #score {
+        text-align: right;
     }
 }
 
@@ -17,9 +34,18 @@
     text-align: center;
 }
 
+#header-section {
+    margin-top: 10px;
+}
+
+.score-col {
+    height: 1.66em;
+    line-height: 2;
+}
+
 h1 {
     font-family: 'Lobster', cursive;
-    font-size: 24pt;
+    font-size: 1.66em;
     font-weight: 900;
     margin: 0 0 0 0;
 }
@@ -28,34 +54,6 @@ h2 {
     font-size: 32pt;
     margin-top: 15px;
     margin-bottom: 0;
-}
-
-.header-section {
-    margin-top: 10px;
-}
-
-.video-row {
-    padding: 10px 0 10px 0;
-}
-
-.video-section {
-    background-color: black;
-}
-
-#options {
-    margin-top: 10px;
-}
-
-.ui-pnotify-text {
-    font-size: 16px;
-}
-
-.ui-pnotify-title {
-    font-weight: 700;
-}
-
-.modal-title {
-    font-weight: 700;
 }
 
 .score-glyph {
@@ -71,31 +69,68 @@ h2 {
     color: #a94442;
 }
 
+#video-section {
+    background-color: black;
+}
+
+.video-row {
+    padding: 10px 0 10px 0;
+}
+
+#quiz-section {
+    margin-bottom: 10px;
+}
+
+#options {
+    margin-top: 10px;
+}
+
+.ui-pnotify-text {
+    font-size: 16px;
+}
+
+.ui-pnotify-title {
+    font-weight: 700;
+}
+
 .btn {
     border-radius: 30px;
+    color: #ffffff;
+    background: #2196F3 none;
+    border-color: #1565C0;
 }
 
-.score-wrapper {
-    position: relative;
-    height: 29px;
+.btn:hover {
+    background: #1565C0 none;
 }
 
-#score {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.modal-title {
+    font-weight: 700;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    margin-top: 30px;
-    padding-top: 20px;
+.wrapper {
+    margin-bottom: -40px;
+    min-height: 100%;
+}
+
+.wrapper:after {
+    content: "";
+    display: block;
+}
+
+#footer, .wrapper:after {
+    height: 40px;
+}
+
+#footer {
+    width: 100%;
+    margin: 0 auto;
 }
 
 .copyright {
-    font-size: 11px;
+    font-size: 12px;
     text-align: right;
+    font-family: Arial, sans-serif;
 }
 
 .footer-row {
@@ -105,4 +140,10 @@ footer {
 
 .footer-row li {
     display: inline-block;
+}
+
+.btn-sample {
+    color: #ffffff;
+    background-color: #2196F3;
+    border-color: #0D47A1;
 }

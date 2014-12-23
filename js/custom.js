@@ -20,7 +20,7 @@ function nextQuestion() {
 
     $("#options").empty();
     for (var i = 0; i < poem.options.length; i++) {
-        $("#options").append("<button type=button class='btn btn-success btn-lg "
+        $("#options").append("<button type=button class='btn btn-primary btn-lg "
         + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</button>&nbsp;");
     }
     $(".btn.no").click(function () {
@@ -85,7 +85,7 @@ function show_stack_info() {
         before_open: function(PNotify) {
             // Position this notice in the center of the screen.
             PNotify.get().css({
-                "top": ($(window).height() / 2) - (PNotify.get().height() / 2),
+                "top": (2 * $(window).height() / 5) - (PNotify.get().height() / 2),
                 "left": ($(window).width() / 2) - (PNotify.get().width() / 2)
             });
             // Make a modal screen overlay.
