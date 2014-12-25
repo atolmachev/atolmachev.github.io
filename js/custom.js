@@ -21,8 +21,8 @@ function nextQuestion() {
 
     $("#options").empty();
     for (var i = 0; i < poem.options.length; i++) {
-        $("#options").append("<a id='"+i*n+"' role='button' class='btn btn-primary btn-lg "
-        + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</a>&nbsp;");
+        $("#options").append("<button id='"+i*n+"' type='button' class='btn btn-primary btn-lg "
+        + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</button>&nbsp;");
     }
     $(".btn.no").click(function () {
         show_answer(window.errMessages[randomInt(window.errMessages.length)],
