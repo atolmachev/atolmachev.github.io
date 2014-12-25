@@ -48,7 +48,7 @@ function nextQuestion() {
         if (window.step == window.qn) {
             show_congtrats();
         } else {
-            nextQuestion();
+            setTimeout(function(){nextQuestion();}, 1000);
         }
     });
 
@@ -114,5 +114,6 @@ function show_answer(title, text, type, icon) {
                 "left": ($(window).width() / 2) - (PNotify.get().width() / 2),
                 "top": $(".footer").offset() - 10
             });
-        }});
+        }
+    });
 }
