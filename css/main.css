@@ -113,6 +113,26 @@ h2 {
     background: #1565C0 none;
 }
 
+@media (max-width: 750px) {
+    * {
+        font-size: 16pt;
+    }
+
+    h2 {
+        font-size: 28pt;
+    }
+    h4 {
+        font-size: 16pt;
+    }
+    .ui-pnotify-text {
+        font-size: 14px;
+    }
+    .btn {
+        width: 80%;
+        margin-top: 10px;
+    }
+}
+
 .modal-title {
     font-weight: 700;
 }
