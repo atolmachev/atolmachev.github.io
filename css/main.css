@@ -11,6 +11,11 @@ html, body {
     height: 100%;
 }
 
+.container {
+    text-align: center;
+    width: 100%;
+}
+
 .embed-responsive {
     padding-bottom: 75%;
 }
@@ -28,10 +33,6 @@ html, body {
     #score {
         text-align: right;
     }
-}
-
-.container {
-    text-align: center;
 }
 
 #header-section {
@@ -112,6 +113,30 @@ h2 {
     background: #1565C0 none;
 }
 
+@media (max-width: 620px) {
+    * {
+        font-size: 22pt;
+    }
+
+    h2 {
+        font-size: 40pt;
+    }
+    h4 {
+        font-size: 22pt;
+    }
+    .ui-pnotify-text {
+        font-size: 21px;
+    }
+    .ui-pnotify {
+        width: 400px !important;
+    }
+    .btn {
+        width: 80%;
+        font-size: 22pt;
+        margin-top: 10px;
+    }
+}
+
 .modal-title {
     font-weight: 700;
 }
@@ -133,13 +158,6 @@ h2 {
 #footer {
     width: 100%;
     margin: 0 auto;
-}
-
-
-.btn-sample {
-    color: #ffffff;
-    background-color: #2196F3;
-    border-color: #0D47A1;
 }
 
 .footer-links {

@@ -21,8 +21,8 @@ function nextQuestion() {
 
     $("#options").empty();
     for (var i = 0; i < poem.options.length; i++) {
-        $("#options").append("<button id='"+i*n+"' type='button' class='btn btn-primary btn-lg "
-        + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</button>&nbsp;");
+        $("#options").append("<a id='"+i*n+"' role='button' class='btn btn-primary btn-lg "
+        + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</a>&nbsp;");
     }
     $(".btn.no").click(function () {
         show_answer(window.errMessages[randomInt(window.errMessages.length)],
@@ -33,7 +33,8 @@ function nextQuestion() {
     });
     $(".btn.yes").click(function () {
         window.ok++;
-        show_answer(window.okMessages[randomInt(window.okMessages.length)], 'А стихи читал '+poem.actorName, 'success');
+        show_answer(window.okMessages[randomInt(window.okMessages.length)], 'А стихи читал '+poem.actorName, 'success',
+        'glyphicon glyphicon-ok-sign');
         $(".score-glyph").eq(window.step).addClass("score-success");
         window.step++;
         if (window.step == window.qn) {
@@ -94,7 +95,6 @@ function show_answer(title, text, type, icon) {
         icon: icon,
         delay: 2000,
         addclass: "stack-bar-bottom",
-        width: "300px",
         buttons: {
             sticker: false,
             closer: false
@@ -102,8 +102,9 @@ function show_answer(title, text, type, icon) {
         stack: stack_bar_bottom,
         before_open: function(PNotify) {
             // Position this notice in the center of the screen.
+            var width = $(window).width() > 620 ? 300 : 400;
             PNotify.get().css({
-                "left": ($(window).width() / 2) - (PNotify.get().width() / 2),
+                "left": ($(window).width() / 2) - (width / 2),
                 "top": $(".footer").offset() - 10
             });
         }});
