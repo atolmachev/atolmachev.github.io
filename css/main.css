@@ -93,6 +93,14 @@ h2 {
     font-weight: 700;
 }
 
+.ui-pnotify.stack-bar-bottom {
+    margin-bottom: 50px;
+    right: auto;
+    left: 0;
+    bottom: 0;
+    top: auto;
+}
+
 .btn {
     border-radius: 30px;
     color: #ffffff;
@@ -145,5 +153,6 @@ h2 {
 }
 
 a.email, .copyright {
+    text-align: left;
     font-size: 14px;
 }

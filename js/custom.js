@@ -24,34 +24,19 @@ function nextQuestion() {
         + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</button>&nbsp;");
     }
     $(".btn.no").click(function () {
-        new PNotify({
-            title: window.errMessages[randomInt(window.errMessages.length)],
-            text: "Ведь это же <a href='"+ poem.poetLink +"' target='_blank'>" +poem.options[poem.correctKey] + "</a>&nbsp;!",
-            type: 'error',
-            icon: 'glyphicon glyphicon-remove',
-            buttons: {
-                sticker: false,
-                closer: false
-            }
-        });
+        show_answer(window.errMessages[randomInt(window.errMessages.length)],
+            "Ведь это же <a href='"+ poem.poetLink +"' target='_blank'>" +poem.options[poem.correctKey] + "</a>&nbsp;!",
+            'error', 'glyphicon glyphicon-remove');
         initScore();
         nextQuestion();
     });
     $(".btn.yes").click(function () {
         window.ok++;
-        new PNotify({
-            title: window.okMessages[randomInt(window.okMessages.length)],
-            text: 'А стихи читал '+poem.actorName,
-            type: 'success',
-            buttons: {
-                sticker: false,
-                closer: false
-            }
-        });
+        show_answer(window.okMessages[randomInt(window.okMessages.length)], 'А стихи читал '+poem.actorName, 'success');
         $(".score-glyph").eq(window.step).addClass("score-success");
         window.step++;
         if (window.step == window.qn) {
-            show_stack_info();
+            show_congtrats();
         } else {
             nextQuestion();
         }
@@ -64,13 +49,8 @@ function randomInt(n) {
     return Math.floor(Math.random() * n)
 }
 
-function show_stack_info() {
-    var modal_overlay;
-    if (typeof info_box != "undefined") {
-        info_box.open();
-        return;
-    }
-    info_box = new PNotify({
+function show_congtrats() {
+    new PNotify({
         title: 'Поздравляем!',
         text: "Вы отлично разбираетесь в русской поэзии! \n Вы можете \n &nbsp; <a href='index.html'>Сыграть еще раз</a> \n &nbsp; <a href='http:\\vk.com' target='_blank'>Рассказать друзьям</a>",
         type: 'success',
@@ -89,8 +69,7 @@ function show_stack_info() {
                 "left": ($(window).width() / 2) - (PNotify.get().width() / 2)
             });
             // Make a modal screen overlay.
-            if (modal_overlay) modal_overlay.fadeIn("fast");
-            else modal_overlay = $("<div />", {
+            var modal_overlay = $("<div />", {
                 "class": "ui-widget-overlay",
                 "css": {
                     "display": "none",
@@ -101,9 +80,30 @@ function show_stack_info() {
                     "left": "0"
                 }
             }).appendTo("body").fadeIn("fast");
-        },
-        before_close: function() {
-            modal_overlay.fadeOut("fast");
         }
     });
+}
+
+function show_answer(title, text, type, icon) {
+    var stack_bar_bottom = {"dir1": "up", "dir2": "right", "spacing1": 0, "spacing2": 0};
+    new PNotify({
+        title: title,
+        text: text,
+        type: type,
+        icon: icon,
+        delay: 2000,
+        addclass: "stack-bar-bottom",
+        width: "300px",
+        buttons: {
+            sticker: false,
+            closer: false
+        },
+        stack: stack_bar_bottom,
+        before_open: function(PNotify) {
+            // Position this notice in the center of the screen.
+            PNotify.get().css({
+                "left": ($(window).width() / 2) - (PNotify.get().width() / 2),
+                "top": $(".footer").offset() - 10
+            });
+        }});
 }
