@@ -59,7 +59,7 @@ function show_congtrats() {
         icon: 'glyphicon glyphicon-flag',
         hide: false,
         stack: false,
-        width: "500px",
+        width: "400px",
         buttons: {
             closer: false,
             sticker: false
@@ -102,9 +102,8 @@ function show_answer(title, text, type, icon) {
         stack: stack_bar_bottom,
         before_open: function(PNotify) {
             // Position this notice in the center of the screen.
-            var width = $(window).width() > 620 ? 300 : 400;
             PNotify.get().css({
-                "left": ($(window).width() / 2) - (width / 2),
+                "left": ($(window).width() / 2) - (PNotify.get().width() / 2),
                 "top": $(".footer").offset() - 10
             });
         }});
