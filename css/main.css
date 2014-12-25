@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-    font-size: 32pt;
+    font-size: 2.7em;
     margin-top: 15px;
     margin-bottom: 0;
 }
@@ -87,7 +87,7 @@ h2 {
 }
 
 .ui-pnotify-text {
-    font-size: 16px;
+    font-size: 0.88em;
 }
 
 .ui-pnotify-title {
@@ -115,21 +115,7 @@ h2 {
 
 @media (max-width: 750px) {
     * {
-        font-size: 16pt;
-    }
-
-    h2 {
-        font-size: 28pt;
-    }
-    h4 {
-        font-size: 16pt;
-    }
-    .ui-pnotify-text {
-        font-size: 14px;
-    }
-    .btn {
-        width: 80%;
-        margin-top: 10px;
+        font-size: 16px;
     }
 }
 
@@ -168,5 +154,5 @@ h2 {
 
 a.email, .copyright {
     text-align: left;
-    font-size: 14px;
+    font-size: 0.77em;
 }
