@@ -93,7 +93,7 @@ function show_answer(title, text, type, icon) {
         text: text,
         type: type,
         icon: icon,
-        delay: 10000,
+        delay: 2000,
         addclass: "stack-bar-bottom",
         buttons: {
             sticker: false,
