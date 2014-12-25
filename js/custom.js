@@ -59,7 +59,7 @@ function show_congtrats() {
         icon: 'glyphicon glyphicon-flag',
         hide: false,
         stack: false,
-        width: "400px",
+        width: "350px",
         buttons: {
             closer: false,
             sticker: false
@@ -93,7 +93,7 @@ function show_answer(title, text, type, icon) {
         text: text,
         type: type,
         icon: icon,
-        delay: 2000,
+        delay: 10000,
         addclass: "stack-bar-bottom",
         buttons: {
             sticker: false,

@@ -52,6 +52,9 @@ h2 {
     margin-top: 15px;
     margin-bottom: 0;
 }
+h4 {
+    font-size: 1em;
+}
 
 .score-glyph {
     color: #d3d3d3;
@@ -103,6 +106,7 @@ h2 {
     color: #ffffff;
     background: #2196F3 none;
     border-color: #1565C0;
+    font-size: 1em;
 }
 
 .btn:hover {
