@@ -14,13 +14,14 @@ function initScore() {
 }
 
 function nextQuestion() {
-    var poem = window.poemPool[randomInt(window.poemPool.length)];
+    var n = randomInt(window.poemPool.length);
+    var poem = window.poemPool[n];
     $("#video").empty().append("<iframe width='420' height='315' class='embed-responsive-item' src='"+ poem.videoRef
     +"&showinfo=0&modestbranding=1&rel=0&fs=0&start=20' frameborder='0'></iframe>");
 
     $("#options").empty();
     for (var i = 0; i < poem.options.length; i++) {
-        $("#options").append("<button type=button class='btn btn-primary btn-lg "
+        $("#options").append("<button id='"+i*n+"' type='button' class='btn btn-primary btn-lg "
         + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</button>&nbsp;");
     }
     $(".btn.no").click(function () {
