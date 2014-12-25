@@ -1,7 +1,7 @@
 window.poemPool = [
     {
         videoRef: "https://www.youtube.com/embed/PC5Q1qIHySU?start=60",
-        options: ["Есенин", "Блок", "Пушкин", "Бальмонт"],
+        options: ["Есенин", "Блок", "Пушкин", "Маяковский"],
         correctKey: 2,
         poetLink: "http://goo.gl/OiNFYi",
         actorName: "Иннокентий Смоктуновский"
@@ -15,14 +15,14 @@ window.poemPool = [
     },
     {
         videoRef: "https://www.youtube.com/embed/mvJz7bE1eLc?start=25",
-        options: ["Пастернак", "Церетели", "Нонешвили", "Бараташвили"],
+        options: ["Пастернак", "Маяковский", "Ахматова", "Бараташвили"],
         correctKey: 3,
         poetLink: "http://goo.gl/d6x19o",
         actorName: "Резо Габриадзе"
     },
     {
         videoRef: "https://www.youtube.com/embed/pJzZbuFny04?start=9",
-        options: ["Пастернак", "Высоцкий", "Ахматова", "Есенин"],
+        options: ["Пастернак", "Высоцкий", "Пушкин", "Тютчев"],
         correctKey: 0,
         poetLink: "http://goo.gl/rvKOIJ",
         actorName: "Владимир Высоцкий"
@@ -43,21 +43,21 @@ window.poemPool = [
     },
     {
         videoRef: "https://www.youtube.com/embed/KIkCtDRGN1c?start=5&end=61",
-        options: ["Цветаева", "Ахмадулина", "Ахматова", "Берггольц"],
+        options: ["Есенин", "Ахмадулина", "Ахматова", "Шпаликов"],
         poetLink: "http://goo.gl/0lUqQt",
         correctKey: 1,
         actorName: "Аня Чиповская"
     },
     {
         videoRef: "https://www.youtube.com/embed/jY5CkSzcwMc?start=6&end=39",
-        options: ["Симонов", "Берггольц", "Шпаликов", "Тарковский"],
+        options: ["Симонов", "Пушкин", "Шпаликов", "Есенин"],
         correctKey: 2,
         poetLink: "http://goo.gl/TcXMEm",
         actorName: "Александр Яценко"
     },
     {
         videoRef: "https://www.youtube.com/embed/h6kUlSvpuiw?start=5&end=50",
-        options: ["Шпаликов", "Симонов", "Твардовкий", "Друнина"],
+        options: ["Шпаликов", "Некрасов", "Твардовкий", "Фет"],
         correctKey: 0,
         poetLink: "http://goo.gl/TcXMEm",
         actorName: "Михаил Ефремов"
@@ -68,6 +68,13 @@ window.poemPool = [
         correctKey: 1,
         poetLink: "http://goo.gl/OMDW2B",
         actorName: "Сергей Юрский"
+    },
+    {
+        videoRef: "https://www.youtube.com/embed/Hz58EQsGw6A?start=31",
+        options: ["Есенин", "Гумилев", "Лермонтов", "Маяковский"],
+        correctKey: 3,
+        poetLink: "http://goo.gl/OMDW2B",
+        actorName: "Марк Розовский"
     }
 ];
 
