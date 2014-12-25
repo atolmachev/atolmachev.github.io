@@ -1,5 +1,13 @@
 $(function () {
     window.qn = 5;
+
+    $(".btn").on("touchstart", function(){
+        $(this).removeClass("mobileHoverFix");
+    });
+    $(".btn").on("touchend", function(){
+        $(this).addClass("mobileHoverFix");
+    });
+
     initScore();
     nextQuestion();
 });

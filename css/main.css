@@ -169,3 +169,8 @@ a.email, .copyright {
     text-align: left;
     font-size: 0.77em;
 }
+
+.mobileHoverFix:hover,
+.mobileHoverFix.hover{
+    background-position: 0 0;
+}
