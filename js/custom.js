@@ -1,12 +1,6 @@
 $(function () {
     window.qn = 5;
-
-    $(".btn").on("touchstart", function(){
-        $(this).removeClass("mobileHoverFix");
-    });
-    $(".btn").on("touchend", function(){
-        $(this).addClass("mobileHoverFix");
-    });
+    window.qpoems = get_random_poems(window.qn);
 
     initScore();
     nextQuestion();
@@ -22,20 +16,20 @@ function initScore() {
 }
 
 function nextQuestion() {
-    var n = randomInt(window.poemPool.length);
-    var poem = window.poemPool[n];
+    var q = window.qpoems[window.step];
+    var poem = window.poemPool[q];
     $("#video").empty().append("<iframe width='420' height='315' class='embed-responsive-item' src='"+ poem.videoRef
     +"&showinfo=0&modestbranding=1&rel=0&fs=0&start=20' frameborder='0'></iframe>");
 
     $("#options").empty();
     for (var i = 0; i < poem.options.length; i++) {
-        $("#options").append("<button id='"+i*n+"' type='button' class='btn btn-primary btn-lg "
+        $("#options").append("<button id='"+i*q+"' type='button' class='btn btn-primary btn-lg "
         + (poem.correctKey === i ? "yes'" : "no'") + ">"+poem.options[i]+"</button>&nbsp;");
     }
     $(".btn.no").click(function () {
         show_answer(window.errMessages[randomInt(window.errMessages.length)],
             "Ведь это же <a href='"+ poem.poetLink +"' target='_blank'>" +poem.options[poem.correctKey] + "</a>&nbsp;!",
-            'error', 'glyphicon glyphicon-remove');
+            'error', 'glyphicon glyphicon-exclamation-sign');
         initScore();
         nextQuestion();
     });
@@ -116,4 +110,26 @@ function show_answer(title, text, type, icon) {
             });
         }
     });
+}
+
+function get_random_poems(n) {
+    var array = [];
+    for (var i = 0; i < window.poemPool.length; i++) {
+        array[i] = i;
+    }
+    array = shuffle(array);
+    return array.slice(0, n);
+}
+
+
+function shuffle(array) {
+    var out = array;
+    for (var i = array.length-1; i >= 0; i--) {
+        var r = Math.floor(Math.random() * (i+1));
+
+        var temp = out[i];
+        out[i] = out[r];
+        out[r] = temp;
+    }
+    return out;
 }
