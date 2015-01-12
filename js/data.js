@@ -89,7 +89,7 @@ window.poemPool = [
     },
     {
         name: "Послушайте!",
-        videoRef: "http://www.youtube.com/embed/C8tpWYMeJBQ",
+        videoRef: "http://www.youtube.com/embed/C8tpWYMeJBQ?start=0",
         options: ["Есенин", "Маяковский", "Рождественский", "Лермонтов"],
         correctKey: 1,
         poetLink: "http://goo.gl/7wIysl",
