@@ -1,12 +1,13 @@
 $(function () {
     window.qn = 5;
-    window.qpoems = get_random_poems(window.qn);
 
     initScore();
     nextQuestion();
 });
 
 function initScore() {
+    window.qpoems = get_random_poems(window.qn);
+
     $("#score").empty();
     for (var i = 0; i < window.qn; i++) {
         $("#score").append("<span class='score-glyph glyphicon glyphicon-star'></span>");
@@ -18,6 +19,7 @@ function initScore() {
 function nextQuestion() {
     var q = window.qpoems[window.step];
     var poem = window.poemPool[q];
+    console.log("Next is '"+poem.name+"' ("+poem.videoRef+")");
     $("#video").empty().append("<iframe width='420' height='315' class='embed-responsive-item' src='"+ poem.videoRef
     +"&showinfo=0&modestbranding=1&rel=0&fs=0&start=20' frameborder='0'></iframe>");
 
@@ -35,7 +37,7 @@ function nextQuestion() {
     });
     $(".btn.yes").click(function () {
         window.ok++;
-        show_answer(window.okMessages[randomInt(window.okMessages.length)], 'А стихи читал '+poem.actorName, 'success',
+        show_answer(window.okMessages[randomInt(window.okMessages.length)], 'Cтих <i>&#8220;'+poem.name+'&#8221;</i> '+ inflectRead(poem.actorName) +' '+poem.actorName, 'success',
         'glyphicon glyphicon-ok-sign');
         $(".score-glyph").eq(window.step).addClass("score-success");
         window.step++;
@@ -56,7 +58,7 @@ function randomInt(n) {
 function show_congtrats() {
     new PNotify({
         title: 'Поздравляем!',
-        text: "Вы отлично разбираетесь в русской поэзии! \n Вы можете \n &nbsp; <a href='index.html'>Сыграть еще раз</a> \n &nbsp; <a href='http:\\vk.com' target='_blank'>Рассказать друзьям</a>",
+        text: "Вы отлично разбираетесь в русской поэзии! \n Вы можете \n &nbsp; <a href='index.html'>Сыграть еще раз</a> \n &nbsp;Рассказать друзьям (скоро)",
         type: 'success',
         icon: 'glyphicon glyphicon-flag',
         hide: false,
@@ -95,7 +97,7 @@ function show_answer(title, text, type, icon) {
         text: text,
         type: type,
         icon: icon,
-        delay: 2000,
+        delay: 3000,
         addclass: "stack-bar-bottom",
         buttons: {
             sticker: false,
@@ -133,3 +135,11 @@ function shuffle(array) {
     }
     return out;
 }
+
+function inflectRead(actorName) {
+    return actorName.endsWith("ая") ? "читала" : "читал";
+}
+
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
