@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://C:/distr/Play/activator-1.2.12-minimal/my-first-app/.idea_modules/my-first-app.iml" filepath="C:/distr/Play/activator-1.2.12-minimal/my-first-app/.idea_modules/my-first-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/versemania.iml" filepath="$PROJECT_DIR$/versemania.iml" />
     </modules>
   </component>

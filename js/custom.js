@@ -10,7 +10,7 @@ function initScore() {
 
     $("#score").empty();
     for (var i = 0; i < window.qn; i++) {
-        $("#score").append("<span class='score-glyph glyphicon glyphicon-star'></span>");
+        $("#score").append("<span class='score-glyph glyphicon glyphicon-ok'></span>");
     }
     window.step = 0;
     window.ok = 0;
@@ -75,7 +75,7 @@ function show_congtrats() {
                 "left": ($(window).width() / 2) - (PNotify.get().width() / 2)
             });
             // Make a modal screen overlay.
-            var modal_overlay = $("<div />", {
+            $("<div />", {
                 "class": "ui-widget-overlay",
                 "css": {
                     "display": "none",
